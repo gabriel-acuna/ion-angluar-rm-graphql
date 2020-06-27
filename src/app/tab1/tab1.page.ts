@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharactersService } from '../services/characters.service';
 import { Subscription } from 'rxjs';
-import { Info, Location, Character, Episode } from '../../environments/schema';
+import { Info, Character } from '../../environments/schema';
 
 @Component({
   selector: 'app-tab1',
@@ -12,8 +12,8 @@ export class Tab1Page implements OnInit {
 
   private querySubscription: Subscription;
   loading: boolean;
-  characters: any [];
-  info: any;
+  characters: Character [];
+  info: Info;
   constructor(
     private charactersService: CharactersService
   ) {}
@@ -32,9 +32,5 @@ export class Tab1Page implements OnInit {
       this.characters = data.characters['results'];
       this.info = data.characters['info'];
     });
-  }
-
-  getCharacter(param){
-    console.log(param);
   }
 }

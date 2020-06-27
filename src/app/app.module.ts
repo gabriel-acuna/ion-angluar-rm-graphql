@@ -32,7 +32,9 @@ export class AppModule {
   ) {
     this.apollo.create({
       link: this.httpLink.create({ uri:  API.url}),
-      cache: new InMemoryCache()
+      cache: new InMemoryCache({
+        addTypename: false
+      })
     });
   }
 }

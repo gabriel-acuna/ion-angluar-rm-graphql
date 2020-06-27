@@ -17,18 +17,17 @@
 
     <ion-row>
       <ion-col size="12" size-lg="3" size-md="6" *ngFor="let character of characters">
-        <ion-card>
-
-          <img [src]="character.image"/>
+        <ion-card [routerLink] ="['/characters', character.id]">
           <ion-card-header>
+            <img [src]="character.image"/>
             <ion-card-subtitle> {{  character.species }}</ion-card-subtitle>
             <ion-card-title>{{ character.name}}</ion-card-title>
+         
           </ion-card-header>
           <ion-card-content>
             <p> status: {{ character.status}}</p>
             <p> gender: {{ character.gender }}</p>
           </ion-card-content>
-          <ion-button (click) = "getCharacter(character.id)" >Show more</ion-button>
         </ion-card>
       </ion-col>
     </ion-row>
