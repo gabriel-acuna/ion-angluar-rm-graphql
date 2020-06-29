@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Loactions
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,21 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-grid>
+   
+    <ion-row>
+      <ion-col size="12" size-lg="3" size-md="6" *ngFor="let location of locations">
+        <ion-card [routerLink] ="['/locations', location.id]">
+          <ion-card-header>
+            <ion-card-subtitle>{{ location.type }}</ion-card-subtitle>
+            <ion-card-title>{{ location.name}}</ion-card-title>
+         
+          </ion-card-header>
+          <ion-card-content>
+            <p> Dimension: {{ location.dimension }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
