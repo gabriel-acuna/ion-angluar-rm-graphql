@@ -49,7 +49,7 @@ export interface CharacterResponse{
 export class CharacterService extends Query<CharacterResponse>{
 
   document = gql`
-    query($id:ID){
+    query ($id:ID) {
       character(id: $id) {
         id
         name

@@ -22,10 +22,10 @@ export class Tab1Page implements OnInit {
     this.getCharacters({});
   }
 
-  getCharacters({page = 1, filters = {}}){
+  getCharacters({page = 1, filter = {}}){
     this.querySubscription =  this.charactersService.watch({
       page,
-      filters
+      filter
     }).valueChanges
     .subscribe(({ data, loading }) => {
       this.loading = loading;
