@@ -9,8 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./episodes.page.scss'],
 })
 export class EpisodesPage implements OnInit {
-  private episode: any = [];
-  private loading: boolean = true;
+  episode: any = [];
+  loading = true;
   private querySubscription: Subscription;
   constructor(
     private route: ActivatedRoute,

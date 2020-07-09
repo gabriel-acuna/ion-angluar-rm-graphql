@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class LocationsPage implements OnInit {
 
   location: any = [];
-  private loading: boolean = true;
+  loading  = true;
   private querySubscription: Subscription;
   constructor(
     private locationService: LocationService,
