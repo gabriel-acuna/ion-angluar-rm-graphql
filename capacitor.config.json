@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "ionic-angular-rick-morty",
+  "appId": "io.ionic.rm",
+  "appName": "Rick and Morty",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

@@ -11,7 +11,7 @@ import { Info, Location } from '../../environments/schema';
 export class Tab3Page implements OnInit{
 
   private querySubscription: Subscription;
-  loading: boolean;
+  loading: boolean = true;
   locations: any =  [];
   info: Info;
 

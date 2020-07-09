@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class EpisodesPage implements OnInit {
   private episode: any = [];
+  private loading: boolean = true;
   private querySubscription: Subscription;
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +27,9 @@ export class EpisodesPage implements OnInit {
     this.querySubscription = this.episodeService.watch({
       id
     }).valueChanges
-    .subscribe( ({data}) => this.episode = data.episode);
+    .subscribe( ({ data, loading }) => {
+      this.episode = data.episode;
+      this.loading = loading;
+      });
   }
 }

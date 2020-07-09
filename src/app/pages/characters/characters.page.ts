@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class CharactersPage implements OnInit {
 
   character: any = [];
+  loading: boolean = true;
   private querySubscription: Subscription;
   constructor(
     private route: ActivatedRoute,
@@ -20,13 +21,17 @@ export class CharactersPage implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.getCharacter(id);
+   
   }
 
   getCharacter(id){
     this.querySubscription = this.characterService.watch ({
       id
     }).valueChanges
-    .subscribe(({data}) => this.character = data.character
+    .subscribe(({data,  loading}) => {
+      this.character = data.character
+      this.loading = loading
+      }
     );
   }
 }

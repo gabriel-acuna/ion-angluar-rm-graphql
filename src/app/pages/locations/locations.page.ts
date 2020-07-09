@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class LocationsPage implements OnInit {
 
   location: any = [];
+  private loading: boolean = true;
   private querySubscription: Subscription;
   constructor(
     private locationService: LocationService,
@@ -29,7 +30,10 @@ export class LocationsPage implements OnInit {
         id
       }
     ).valueChanges
-      .subscribe(({ data }) => this.location = data.location
+      .subscribe(({ data, loading }) => {
+        this.location = data.location;
+        this.loading = loading;
+        }
         );
   }
 }

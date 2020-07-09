@@ -9,7 +9,7 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row>
+    <ion-row *ngIf="!loading">
       <ion-col size="12" size-md="3">
         <ion-avatar>
           <img [src]="character.image" [alt]="character.name">
@@ -34,6 +34,40 @@
           <ion-list>
             <ion-item *ngFor="let o of character.origin| keyvalue">
               <ion-label> {{o.value}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-item>
+        
+      
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row *ngIf="loading">
+      <ion-col size="12" size-md="3">
+        <ion-avatar>
+          <ion-skeleton-text animated style="heigth:250px"></ion-skeleton-text>
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="12" size-md="9">
+        <h2>  <ion-skeleton-text animated style="width:60%"></ion-skeleton-text> </h2>
+        <ion-item>
+          <ion-label> <ion-skeleton-text animated style="width:60%"></ion-skeleton-text> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> <ion-skeleton-text animated style="width:60%"></ion-skeleton-text> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>  <ion-skeleton-text animated style="width:60%"></ion-skeleton-text> </ion-label>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>  <ion-skeleton-text animated style="width:60%"></ion-skeleton-text> </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-list>
+            <ion-item>
+              <ion-label>  <ion-skeleton-text animated style="width:60%"></ion-skeleton-text></ion-label>
             </ion-item>
           </ion-list>
         </ion-item>

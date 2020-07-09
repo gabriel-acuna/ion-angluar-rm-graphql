@@ -11,7 +11,7 @@ import { Info, Character } from '../../environments/schema';
 export class Tab1Page implements OnInit {
 
   private querySubscription: Subscription;
-  loading: boolean;
+  loading: boolean = true;
   characters: Character [];
   info: Info;
   constructor(

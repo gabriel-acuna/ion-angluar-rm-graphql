@@ -11,7 +11,7 @@ import { Info, Episode } from '../../environments/schema';
 export class Tab2Page implements OnInit{
 
   private querySubscription: Subscription;
-  loading: boolean;
+  loading: boolean = true;
   episodes: Episode [];
   info: Info;
 
