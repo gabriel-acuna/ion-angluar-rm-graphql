@@ -13,11 +13,13 @@ import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { ApolloModule, Apollo } from 'apollo-angular';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { API } from '../environments/RMGraphAPI';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, HttpLinkModule, ApolloModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, HttpLinkModule, ApolloModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [
     StatusBar,
     SplashScreen,
