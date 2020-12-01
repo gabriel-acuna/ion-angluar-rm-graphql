@@ -42,7 +42,7 @@ export interface EpisodeResponse{
 })
 export class EpisodeService extends Query<EpisodeResponse> {
   document = gql`
-  query($id:ID) {
+  query($id:ID!) {
     episode(id: $id) {
       id
       name

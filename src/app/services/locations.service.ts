@@ -44,7 +44,7 @@ interface LocationResponse{
 export class LocationService extends Query<LocationResponse> {
 
   document = gql`
-    query ($id:ID){
+    query ($id:ID!){
       location (id: $id) {
         id
         name
